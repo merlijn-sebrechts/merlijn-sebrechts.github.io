@@ -1,212 +1,28 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  <meta charset="utf-8">
-<title>Using Dell MH3021P speakerphone on Ubuntu Linux - Merlijn Sebrechts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<meta name="generator" content="Hugo 0.109.0"><meta itemprop="name" content="Using Dell MH3021P speakerphone on Ubuntu Linux">
-<meta itemprop="description" content="I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn&rsquo;t say the device supports Linux, so I was curious to see how much of the device works. Google didn&rsquo;t have an answer so I bought the device to test it for myself.
-Thankfully I can say all the important parts work very well out of the box on Ubuntu 22."><meta itemprop="datePublished" content="2023-01-24T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2023-01-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2615">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Using Dell MH3021P speakerphone on Ubuntu Linux" />
-<meta property="og:description" content="I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn&rsquo;t say the device supports Linux, so I was curious to see how much of the device works. Google didn&rsquo;t have an answer so I bought the device to test it for myself.
-Thankfully I can say all the important parts work very well out of the box on Ubuntu 22." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2023-01-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-01-24T00:00:00+00:00" />
-<meta property="og:image" content="https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg" key="ogimage" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using Dell MH3021P speakerphone on Ubuntu Linux"/>
-<meta name="twitter:description" content="I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn&rsquo;t say the device supports Linux, so I was curious to see how much of the device works. Google didn&rsquo;t have an answer so I bought the device to test it for myself.
-Thankfully I can say all the important parts work very well out of the box on Ubuntu 22."/>
-<meta name="twitter:site" content="@mesebrec"/>
-
-            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/github.min.css">
-          <link rel="stylesheet" href="/css/bundle.min.1bfccf86359e3de974865922b006112447a52f942c2a9c2bf93d159980ae641b.css" integrity="sha256-G/zPhjWePel0hlkisAYRJEelL5QsKpwr&#43;T0VmYCuZBs="><link rel="stylesheet" href="/css/add-on.css">
-</head>
-
-  <body>
-    
-
-<header id="site-header">
-  <nav id="site-nav">
-    <h1 class="nav-title">
-      <a href="/" class="nav">
-        
-          Merlijn Sebrechts
-        
-      </a>
-    </h1>
-    <menu id="site-nav-menu" class="flyout-menu menu">
-      
-        
-          
-          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
-        
-      
-        
-          
-          <a href="/about/" class="nav link"><i class="far fa-id-card">&nbsp;</i>About</a>
-        
-      
-        
-          
-          <a href="/talks/" class="nav link"><i class="far fa-window-maximize">&nbsp;</i>Talks</a>
-        
-      
-        
-          
-          <a href="/nl/tanzania/" class="nav link"><i class="far fa-newspaper">&nbsp;</i>Tanzania (Dutch)</a>
-        
-      
-        
-          
-          <a href="/categories/" class="nav link"><i class="fas fa-sitemap">&nbsp;</i>Categories</a>
-        
-      
-      
-      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
-    </menu>
-    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
-    
-    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
-    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
-  </nav>
-  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
-  <menu id="lang-menu" class="flyout-menu menu">
-  <a href="#" lang="en" class="nav link active">English (en)</a>
-  
-    
-      
-    
-      
-        <a href="/nl" lang="nl" class="nav no-lang link">Nederlands (nl)</a>
-      
-    
-  
-</menu>
-
-  
-</header>
-
-    <div id="wrapper">
-      <section id="site-intro" >
-  <a href="/"><img src="https://merlijn.sebrechts.be/img/main/merlijn-sebrechts-square.jpg" class="circle" width="100" alt="Merlijn Sebrechts" /></a>
-  <header>
-    <h1>Merlijn Sebrechts</h1>
-  </header>
-  <main>
-    <p>Teaching and researching </br> software engineering</p>
-  </main>
-  
-    <footer>
-      <ul class="socnet-icons">
-        
-    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
-
-        <li><a href="//github.com/merlijn-sebrechts" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//linkedin.com/in/merlijn-sebrechts" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//twitter.com/mesebrec" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
-
-
-
-
-
-
-
-<li><a href="//orcid.org/0000-0002-4093-7338" target="_blank" rel="noopener" title="ORCID"><i class="ai ai-orcid"></i></a></li>
-
-
-
-<li><a href="mailto:merlijn.sebrechts@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
-
-      </ul>
-    </footer>
-  
-</section>
-
-      <main id="site-main">
-        
-  <article class="post">
-    <header>
-  <div class="title">
-    
-      <h2><a href="/blog/2023-01-24-dell-mh3021p-speakerphone-linux/">Using Dell MH3021P speakerphone on Ubuntu Linux</a></h2>
-    
-    
-  </div>
-  <div class="meta">
-    <time datetime="2023-01-24 00:00:00 &#43;0000 UTC">January 24, 2023</time>
-    
-    
-  </div>
-</header>
-
-    <div id="socnet-share">
-      
-
-
-
-
-
-    </div>
-    <div class="content">
-      <a href="/blog/2023-01-24-dell-mh3021p-speakerphone-linux/" class="image" style="--bg-image: url('https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg');">
-    <img src="https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg" alt="">
-  </a>
-      <p>I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn&rsquo;t say the device supports Linux, so I was curious to see how much of the device works. Google didn&rsquo;t have an answer so I bought the device to test it for myself.</p>
-<p>Thankfully I can say all <strong>the important parts work very well</strong> out of the box on Ubuntu 22.04!</p>
-<h2 id="what-works-on-linux">What works on Linux</h2>
-<ul>
-<li>Using the <strong>speaker and microphone</strong> from the device for calls. The audio is very clear and picks up everyone&rsquo;s voice when it&rsquo;s sitting in the middle of the table.</li>
-<li>Using the internal <strong>USB-C docking station</strong>. HDMI output, regular USB ports and USB-c ports all work as expected!</li>
-<li><strong>Charging</strong> your laptop from the speakerphone. Connect your charger to the speakerphone, connect the speakerphone to your laptop and your laptop starts charging!</li>
-<li>The <strong>volume buttons</strong> on the speakerphone change the volume of my Ubuntu laptop (with GNOME).</li>
-</ul>
-<h2 id="what-does-not-work-on-linux">What does not work on Linux</h2>
-<ul>
-<li>The <strong>mute button</strong> does nothing. I tried it with both Zoom and Microsoft Teams, and it doesn&rsquo;t seem to work. Moreover, it doesn&rsquo;t even mute its own microphone.</li>
-<li>The <strong>&ldquo;accept call&rdquo; and &ldquo;hangup&rdquo;</strong> button don&rsquo;t do anything either. I also tested this with Zoom and Microsoft Teams.</li>
-</ul>
-<p>If you are interested in figuring out why these things don&rsquo;t work and how to get them to work, let me know in the comments or send me an email!</p>
-<h2 id="appendix-device-logs-and-info">Appendix: device logs and info</h2>
-<p>In case this is of interest or useful to anyone, these are some logs that give a bit more information about the internals of the device.</p>
-<pre tabindex="0"><code class="language-log" data-lang="log">$ lsusb
+<!doctype html><html itemscope lang=en-US itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=theme-name content="hugoplate"><link rel="shortcut icon" href=/images/favicon_hu_55a334ebddc7fd48.png type=image/x-icon><link rel=icon href=/images/favicon_hu_55a334ebddc7fd48.png type=image/x-icon><link rel=icon type=image/png sizes=48x48 href=/images/favicon_hu_1a2588db149a0f67.png><link rel=icon type=image/png sizes=96x96 href=/images/favicon_hu_55a334ebddc7fd48.png><link rel=apple-touch-icon sizes=144x144 href=/images/favicon_hu_c97d5a132c8fe5f3.png><link rel=manifest href=/manifest.webmanifest><meta name=msapplication-TileColor content="#ddd"><meta name=theme-color content="#ffffff"><link rel=me href=https://ubuntu.social/@mesebrec type=text/html><base href=https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/><title>Using Dell MH3021P speakerphone on Ubuntu Linux</title><link rel=canonical href=https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/ itemprop=url><meta name=keywords content="Merlijn Sebrechts,WebAssembly,Confidential Computing,Open Source,Ubuntu,imec,Ghent University"><meta name=description content="I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn’t say the device supports Linux, so I was curious to see how much of the device works. Google didn’t have an answer so I bought the device to test it for myself."><meta name=author content="Merlijn Sebrechts"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg"><meta property="og:image" content="https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg"><meta property="og:title" content="Using Dell MH3021P speakerphone on Ubuntu Linux"><meta property="og:description" content="I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn’t say the device supports Linux, so I was curious to see how much of the device works. Google didn’t have an answer so I bought the device to test it for myself."><meta property="og:type" content="article"><meta property="og:site_name" content="Merlijn Sebrechts"><meta property="og:locale" content="en_US"><meta property="article:published_time" content="2023-01-24T00:00:00+01:00"><meta property="article:modified_time" content="2023-01-24T00:00:00+01:00"><meta property="article:author" content="Merlijn Sebrechts"><meta property="og:url" content="https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/"><meta name=twitter:title content="Using Dell MH3021P speakerphone on Ubuntu Linux"><meta name=twitter:description content="I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn’t say the device supports Linux, so I was curious to see how much of the device works. Google didn’t have an answer so I bought the device to test it for myself."><meta name=twitter:site content="@mesebrec"><meta name=twitter:creator content="@mesebrec"><meta name=fediverse:creator content="@mesebrec@ubuntu.social"><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@id":"https://merlijn.sebrechts.be/#website","@type":"WebSite","inLanguage":"en-US","name":"Merlijn Sebrechts","publisher":{"@id":"https://merlijn.sebrechts.be/#person"},"url":"https://merlijn.sebrechts.be/"},{"@id":"https://merlijn.sebrechts.be/#person","@type":"Person","alumniOf":[{"@type":"CollegeOrUniversity","name":"Ghent University","url":"https://www.ugent.be/"}],"description":"Senior researcher at imec and teaching at Ghent University. Ubuntu Community Council member. Leading a number of research tracks focused on cybersecurity and trust for software \u0026 AI.","image":"https://merlijn.sebrechts.be/images/merlijn-sebrechts_hu_9592c84ab96568f8.jpg","jobTitle":"Senior Researcher","knowsAbout":["WebAssembly","Confidential Computing","Kubernetes","Virtualization","Open Source","Software Deployment","IT Law"],"name":"Merlijn Sebrechts","sameAs":["https://github.com/merlijn-sebrechts","https://www.linkedin.com/in/merlijn-sebrechts","https://twitter.com/mesebrec","https://ubuntu.social/@mesebrec","https://orcid.org/0000-0002-4093-7338","https://www.researchgate.net/profile/Merlijn-Sebrechts"],"url":"https://merlijn.sebrechts.be/about/","worksFor":[{"@type":"ResearchOrganization","name":"imec","url":"https://www.imec-int.com/"},{"@type":"CollegeOrUniversity","name":"Ghent University","url":"https://www.ugent.be/"}]},{"@id":"https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/#blogposting","@type":"BlogPosting","author":{"@id":"https://merlijn.sebrechts.be/#person"},"dateModified":"2023-01-24T00:00:00+01:00","datePublished":"2023-01-24T00:00:00+01:00","description":"I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn’t say the device supports Linux, so I was curious to see how much of the device works. Google didn’t have an answer so I bought the device to test it for myself.","headline":"Using Dell MH3021P speakerphone on Ubuntu Linux","image":"https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg","inLanguage":"en-US","isPartOf":{"@id":"https://merlijn.sebrechts.be/#website"},"keywords":"Linux","mainEntityOfPage":"https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/","publisher":{"@id":"https://merlijn.sebrechts.be/#person"},"url":"https://merlijn.sebrechts.be/blog/2023-01-24-dell-mh3021p-speakerphone-linux/"}]}</script><link rel=alternate type=application/rss+xml href=https://merlijn.sebrechts.be/index.xml title="Merlijn Sebrechts"><script>let indexURL="https://merlijn.sebrechts.be/searchindex.json",includeSectionsInSearch=["blog","tanzania"],search_no_results="No results for",search_initial_message="Type something to search.."</script><meta http-equiv=x-dns-prefetch-control content="on"><link rel=preconnect href=https://use.fontawesome.com crossorigin><link rel=preconnect href=//cdnjs.cloudflare.com><link rel=preconnect href=//www.googletagmanager.com><link rel=preconnect href=//www.google-analytics.com><link rel=dns-prefetch href=https://use.fontawesome.com><link rel=dns-prefetch href=//ajax.googleapis.com><link rel=dns-prefetch href=//cdnjs.cloudflare.com><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=dns-prefetch href=//www.google-analytics.com><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//connect.facebook.net><link rel=dns-prefetch href=//platform.linkedin.com><link rel=dns-prefetch href=//platform.twitter.com><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Signika:wght@500;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link href=/css/style.b797e4648c86310b219b97f0250a4adfed345308b6dee05b4c3f6bf0d56d4598.css integrity="sha256-t5fkZIyGMQshm5fwJQpK3+00Uwi23uBbTD9r8NVtRZg=" rel=stylesheet><link rel=stylesheet href=/css/style-lazy.min.43724323b792497902ddcccaaad013522a09381505f9ad708059469e90286898.css integrity="sha256-Q3JDI7eSSXkC3czKqtATUioJOBUF+a1wgFlGnpAoaJg=" media=print onload='this.media="all",this.onload=null'></head><body class="flex flex-col min-h-screen"><header class="header sticky top-0 z-30"><nav class="navbar container"><div class=order-0><a class="navbar-brand block" href=/>Merlijn Sebrechts</a></div><input id=nav-toggle type=checkbox class=hidden>
+<label for=nav-toggle class="order-3 cursor-pointer flex items-center lg:hidden text-text-dark dark:text-white lg:order-1"><svg id="show-button" class="h-6 fill-current block" viewBox="0 0 20 20"><title>Menu Open</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0V0z"/></svg>
+<svg id="hide-button" class="h-6 fill-current hidden" viewBox="0 0 20 20"><title>Menu Close</title><polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)"/></svg></label><ul id=nav-menu class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8"><li class=nav-item><a class=nav-link href=/>Home</a></li><li class=nav-item><a class=nav-link href=/talks/>Speaking & consulting</a></li><li class=nav-item><a class=nav-link href=/blog/>Blog</a></li><li class=nav-item><a class=nav-link href=/about/>About</a></li></ul><div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0"><button aria-label=search class="border-border text-text-dark hover:text-primary
+dark:border-darkmode-border mr-5 inline-block border-r pr-5
+text-xl dark:text-white cursor-pointer dark:hover:text-darkmode-primary" data-target=search-modal>
+<i class="fa-solid fa-search"></i></button><div class="theme-switcher mr-5 invisible"><input id=theme-switcher data-theme-switcher type=checkbox>
+<label for=theme-switcher><span class=sr-only>theme switcher</span>
+<span><svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-100 dark:opacity-0" viewBox="0 0 56 56" fill="#fff" height="16" width="16"><path d="M30 4.6c0-1-.9-2-2-2a2 2 0 00-2 2v5c0 1 .9 2 2 2s2-1 2-2zm9.6 9a2 2 0 000 2.8c.8.8 2 .8 2.9.0L46 13a2 2 0 000-2.9 2 2 0 00-3 0zm-26 2.8c.7.8 2 .8 2.8.0.8-.7.8-2 0-2.9L13 10c-.7-.7-2-.8-2.9.0-.7.8-.7 2.1.0 3zM28 16A12 12 0 0016 28a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0028 16zm23.3 14c1.1.0 2-.9 2-2s-.9-2-2-2h-4.9a2 2 0 00-2 2c0 1.1 1 2 2 2zM4.7 26a2 2 0 00-2 2c0 1.1.9 2 2 2h4.9c1 0 2-.9 2-2s-1-2-2-2zm37.8 13.6a2 2 0 00-3 0 2 2 0 000 2.9l3.6 3.5a2 2 0 002.9.0c.8-.8.8-2.1.0-3zM10 43.1a2 2 0 000 2.9c.8.7 2.1.8 3 0l3.4-3.5c.8-.8.8-2.1.0-2.9s-2-.8-2.9.0zm20 3.4c0-1.1-.9-2-2-2a2 2 0 00-2 2v4.9c0 1 .9 2 2 2s2-1 2-2z"/></svg>
+<svg class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 dark:opacity-100" viewBox="0 0 24 24" fill="none" height="16" width="16"><path fill="#000" fill-rule="evenodd" clip-rule="evenodd" d="M8.2 2.2c1-.4 2 .6 1.6 1.5-1 3-.4 6.4 1.8 8.7a8.4 8.4.0 008.7 1.8c1-.3 2 .5 1.5 1.5v.1A10.3 10.3.0 0112.4 22 10.3 10.3.0 013.2 6.7c1-2 2.9-3.5 4.9-4.4z"/></svg></span></label></div><script>var darkMode=localStorage.getItem("theme")==="dark";localStorage.getItem("theme")===null&&(darkMode=!1,window.matchMedia("(prefers-color-scheme: dark)").matches&&(darkMode=!0)),darkMode?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),document.addEventListener("DOMContentLoaded",()=>{var e=document.querySelectorAll("[data-theme-switcher]"),t=document.querySelector(".theme-switcher");[].forEach.call(e,function(e){e.checked=darkMode,e.addEventListener("click",()=>{document.documentElement.classList.toggle("dark"),localStorage.setItem("theme",document.documentElement.classList.contains("dark")?"dark":"light")})}),t.classList.remove("invisible")})</script></div></nav></header><div class=search-modal aria-hidden=true style=--color-primary:#121212><div data-target=close-search-modal class=search-modal-overlay></div><div class=search-wrapper data-image=true data-description=true data-tags=true data-categories=true><div class=search-wrapper-header><label for=search-modal-input style=margin-top:-1px><span class=sr-only>search icon</span>
+<svg viewBox="0 0 512 512" height="18" width="18" class="search-icon" data-type="search"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z"/></svg>
+<svg viewBox="0 0 512 512" height="18" width="18" class="search-reset" data-type="reset"><path fill="currentColor" d="M256 512A256 256 0 10256 0a256 256 0 100 512zM175 175c9.4-9.4 24.6-9.4 33.9.0l47 47 47-47c9.4-9.4 24.6-9.4 33.9.0s9.4 24.6.0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6.0 33.9s-24.6 9.4-33.9.0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9.0s-9.4-24.6.0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6.0-33.9z"/></svg>
+</label><input id=search-modal-input type=text data-search-input autocomplete=off aria-label=Search placeholder="Search Post..."></div><div class=search-wrapper-body><div class=search-result data-search-result></div><span class=search-result-empty>Type something to search..</span></div><div class=search-wrapper-footer><span><kbd><svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 011.506.0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 01-.753-1.659z"/></svg>
+</kbd><kbd><svg width="14" height="14" fill="currentColor" style="margin-top:1px" viewBox="0 0 16 16"><path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 001.506.0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 00-.753 1.659z"/></svg>
+</kbd>to navigate
+</span><span><kbd><svg width="12" height="12" fill="currentColor" style="display:inline-block" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M14.5 1.5a.5.5.0 01.5.5v4.8a2.5 2.5.0 01-2.5 2.5H2.707l3.347 3.346a.5.5.0 01-.708.708l-4.2-4.2a.5.5.0 010-.708l4-4a.5.5.0 11.708.708L2.707 8.3H12.5A1.5 1.5.0 0014 6.8V2a.5.5.0 01.5-.5z"/></svg>
+</kbd>to select
+</span><span class=search-result-info></span>
+<span data-target=close-search-modal><kbd>ESC</kbd> to close</span></div></div></div><main class=grow><section class="section pt-7"><div class=container><div class="row justify-center"><article class=lg:col-10><div class=mb-10><img loading decoding=async src=https://merlijn.sebrechts.be/img/2023/dell-mh3021p.jpg alt="Using Dell MH3021P speakerphone on Ubuntu Linux" class="w-full rounded img" height width></div><h1 class="h2 mb-4">Using Dell MH3021P speakerphone on Ubuntu Linux</h1><ul class=mb-4><li class="mr-4 inline-block"><a href=/authors/merlijn-sebrechts/><i class="fa-regular fa-circle-user mr-2"></i>Merlijn Sebrechts</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-folder mr-2"></i>
+<a href=/categories/linux/>Linux</a></li><li class="mr-4 inline-block"><i class="fa-regular fa-clock mr-2"></i>
+January 24, 2023</li></ul><div class="content mb-10"><details open class="table-of-content blog"><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#what-works-on-linux>What works on Linux</a></li><li><a href=#what-does-not-work-on-linux>What does not work on Linux</a></li><li><a href=#appendix-device-logs-and-info>Appendix: device logs and info</a></li></ol></nav></details><p>I recently bought the Dell MH3021P speakerphone. I want to use it for hybrid meetings and for recording audio during lectures. Dell doesn&rsquo;t say the device supports Linux, so I was curious to see how much of the device works. Google didn&rsquo;t have an answer so I bought the device to test it for myself.</p><p>Thankfully I can say all <strong>the important parts work very well</strong> out of the box on Ubuntu 22.04!</p><h2 id=what-works-on-linux>What works on Linux</h2><ul><li>Using the <strong>speaker and microphone</strong> from the device for calls. The audio is very clear and picks up everyone&rsquo;s voice when it&rsquo;s sitting in the middle of the table.</li><li>Using the internal <strong>USB-C docking station</strong>. HDMI output, regular USB ports and USB-c ports all work as expected!</li><li><strong>Charging</strong> your laptop from the speakerphone. Connect your charger to the speakerphone, connect the speakerphone to your laptop and your laptop starts charging!</li><li>The <strong>volume buttons</strong> on the speakerphone change the volume of my Ubuntu laptop (with GNOME).</li></ul><h2 id=what-does-not-work-on-linux>What does not work on Linux</h2><ul><li>The <strong>mute button</strong> does nothing. I tried it with both Zoom and Microsoft Teams, and it doesn&rsquo;t seem to work. Moreover, it doesn&rsquo;t even mute its own microphone.</li><li>The <strong>&ldquo;accept call&rdquo; and &ldquo;hangup&rdquo;</strong> button don&rsquo;t do anything either. I also tested this with Zoom and Microsoft Teams.</li></ul><p>If you are interested in figuring out why these things don&rsquo;t work and how to get them to work, let me know in the comments or send me an email!</p><h2 id=appendix-device-logs-and-info>Appendix: device logs and info</h2><p>In case this is of interest or useful to anyone, these are some logs that give a bit more information about the internals of the device.</p><pre tabindex=0><code class=language-log data-lang=log>$ lsusb
 Bus 003 Device 014: ID 2109:8884 VIA Labs, Inc. Dell MH3021P           
 Bus 003 Device 013: ID 413c:81e3 Dell Computer Corp. Dell MH3021P
 Bus 003 Device 012: ID 2109:2822 VIA Labs, Inc. USB2.0 Hub             
 Bus 002 Device 007: ID 2109:0822 VIA Labs, Inc. USB3.1 Hub             
-</code></pre><pre tabindex="0"><code class="language-log" data-lang="log">$ sudo journalctl -k
+</code></pre><pre tabindex=0><code class=language-log data-lang=log>$ sudo journalctl -k
 Jan 24 11:38:15 laptop kernel: usb 3-2: new high-speed USB device number 23 using xhci_hcd
 Jan 24 11:38:15 laptop kernel: usb 2-2: new SuperSpeed Plus Gen 2x1 USB device number 10 using xhci_hcd
 Jan 24 11:38:15 laptop kernel: usb 2-2: New USB device found, idVendor=2109, idProduct=0822, bcdDevice= 6.33
@@ -249,7 +65,7 @@ Jan 24 11:38:20 laptop kernel: usb 2-2: Manufacturer: VIA Labs, Inc.
 Jan 24 11:38:20 laptop kernel: usb 2-2: SerialNumber: 000000001
 Jan 24 11:38:20 laptop kernel: hub 2-2:1.0: USB hub found
 Jan 24 11:38:20 laptop kernel: hub 2-2:1.0: 4 ports detected
-</code></pre><pre tabindex="0"><code class="language-log" data-lang="log">$ usb-devices
+</code></pre><pre tabindex=0><code class=language-log data-lang=log>$ usb-devices
 
 T:  Bus=02 Lev=01 Prnt=01 Port=01 Cnt=01 Dev#= 11 Spd=10000 MxCh= 4
 D:  Ver= 3.20 Cls=09(hub  ) Sub=00 Prot=03 MxPS= 9 #Cfgs=  1
@@ -260,7 +76,7 @@ S:  SerialNumber=000000001
 C:  #Ifs= 1 Cfg#= 1 Atr=e0 MxPwr=0mA
 I:  If#= 0 Alt= 0 #EPs= 1 Cls=09(hub  ) Sub=00 Prot=00 Driver=hub
 E:  Ad=81(I) Atr=13(Int.) MxPS=   2 Ivl=16ms
-</code></pre><pre tabindex="0"><code class="language-log" data-lang="log">$ sudo lsusb -v
+</code></pre><pre tabindex=0><code class=language-log data-lang=log>$ sudo lsusb -v
 
 Bus 003 Device 028: ID 2109:8884 VIA Labs, Inc. Dell MH3021P           
 Device Descriptor:
@@ -881,246 +697,4 @@ Device Status:     0x000d
   Self Powered
   U1 Enabled
   U2 Enabled
-</code></pre>
-    </div>
-    <footer>
-      <div class="stats">
-  
-    <ul class="categories">
-      
-        
-          <li><a class="article-terms-link" href="/categories/linux/">Linux</a></li>
-        
-      
-    </ul>
-  
-  
-    <ul class="tags">
-      <li>None</li>
-    </ul>
-  
-</div>
-
-    </footer>
-  </article>
-  
-    
-  <article class="post">
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    window.disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "merlijn" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  </article>
-
-
-
-
-  
-  <div class="pagination">
-    
-      <a href="/blog/2023-05-05-ai-chatgpt-master-thesis/" class="button left"><span>Our students can use AI for their master&#39;s thesis - the policy</span></a>
-    
-    
-      <a href="/blog/2022-11-10-turn-off-snap-updates/" class="button right"><span>You can finally disable Snap updates</span></a>
-    
-  </div>
-
-      </main>
-      <section id="site-sidebar">
-  
-    <section id="recent-posts">
-      <header>
-        <h1>Recent Posts</h1>
-      </header>
-      
-      <article class="mini-post">
-          <a href="/blog/2024-08-06-problematic-meta-llama-3-1-license/" class="image" style="--bg-image: url('https://merlijn.sebrechts.be/img/2024/Llamas-legal-labyrinth.png');">
-    <img src="https://merlijn.sebrechts.be/img/2024/Llamas-legal-labyrinth.png" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/2024-08-06-problematic-meta-llama-3-1-license/">Llama&#39;s Legal Labyrinth</a></h2>
-          <time class="published" datetime="2024-08-06 00:00:00 &#43;0000 UTC">August 6, 2024</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/what-is-the-apache-2-llvm-exception/" class="image" style="--bg-image: url('https://merlijn.sebrechts.be/img/2024/asf-logo.png');">
-    <img src="https://merlijn.sebrechts.be/img/2024/asf-logo.png" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/what-is-the-apache-2-llvm-exception/">What is the Apache 2.0 LLVM Exception?</a></h2>
-          <time class="published" datetime="2024-03-04 00:00:00 &#43;0000 UTC">March 4, 2024</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/2024-02-17-ubuntu-community-council-year/" class="image" style="--bg-image: url('https://merlijn.sebrechts.be/img/2024/ubuntu-summit-2023.png');">
-    <img src="https://merlijn.sebrechts.be/img/2024/ubuntu-summit-2023.png" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/2024-02-17-ubuntu-community-council-year/">A year in the Ubuntu Community Council</a></h2>
-          <time class="published" datetime="2024-02-17 00:00:00 &#43;0000 UTC">February 17, 2024</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/2023-12-28-ecoloop-pro-vs-ecoloop-premier-slim/" class="image" style="--bg-image: url('https://merlijn.sebrechts.be/img/2023/dell-ecoloop-pro-vs-premier.jpg');">
-    <img src="https://merlijn.sebrechts.be/img/2023/dell-ecoloop-pro-vs-premier.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/2023-12-28-ecoloop-pro-vs-ecoloop-premier-slim/">Dell EcoLoop Pro vs Premier backpack</a></h2>
-          <time class="published" datetime="2023-12-28 00:00:00 &#43;0000 UTC">December 28, 2023</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-          <a href="/blog/2023-05-05-ai-chatgpt-master-thesis/" class="image" style="--bg-image: url('https://merlijn.sebrechts.be/img/2023/ai-masters-thesis-feature.jpg');">
-    <img src="https://merlijn.sebrechts.be/img/2023/ai-masters-thesis-feature.jpg" alt="">
-  </a>
-        <header>
-          <h2><a href="/blog/2023-05-05-ai-chatgpt-master-thesis/">Our students can use AI for their master&#39;s thesis - the policy</a></h2>
-          <time class="published" datetime="2023-05-05 00:00:00 &#43;0000 UTC">May 5, 2023</time>
-        </header>
-      </article>
-      
-      
-        <footer>
-          <a href="/blog/" class="button">See More</a>
-        </footer>
-      
-    </section>
-  
-
-  
-    
-      <section id="categories">
-        <header>
-          <h1><a href="/categories">Categories</a></h1>
-        </header>
-        <ul>
-          
-          
-          <li>
-              <a href="/categories/linux/">linux<span class="count">16</span></a>
-          
-          <li>
-              <a href="/categories/university/">university<span class="count">4</span></a>
-          
-          <li>
-              <a href="/categories/personal/">personal<span class="count">2</span></a>
-          
-          <li>
-              <a href="/categories/other/">other<span class="count">1</span></a>
-          
-          </li>
-        </ul>
-      </section>
-    
-  
-
-  
-    <section id="mini-bio">
-      <header>
-        <h1>About</h1>
-      </header>
-      <p>Curious for more? <a href="/nl/">Check out the Dutch part of this blog.</a></p>
-      <footer>
-        <a href="/about" class="button">Learn More</a>
-      </footer>
-    </section>
-  
-</section>
-
-      <footer id="site-footer">
-  
-      <ul class="socnet-icons">
-        
-    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
-
-        <li><a href="//github.com/merlijn-sebrechts" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//linkedin.com/in/merlijn-sebrechts" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//twitter.com/mesebrec" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
-
-
-
-
-
-
-
-<li><a href="//orcid.org/0000-0002-4093-7338" target="_blank" rel="noopener" title="ORCID"><i class="ai ai-orcid"></i></a></li>
-
-
-
-<li><a href="mailto:merlijn.sebrechts@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
-
-      </ul>
-  
-  <p class="copyright">
-    © 2024 Merlijn Sebrechts
-      <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.109.0' target='_blank' rel='noopener'>Hugo</a>
-  </p>
-</footer>
-<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
-
-      <script src="/js/highlight.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/html.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/css.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/js.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/toml.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.9d88ddaa98317bcb4edc30879f086204e7380b2e5ec94aa11df2643e69861c80.js" integrity="sha256-nYjdqpgxe8tO3DCHnwhiBOc4Cy5eyUqhHfJkPmmGHIA="></script>
-    <script src="/js/add-on.js"></script>
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-172953075-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-    </div>
-  </body>
-</html>
+</code></pre></div><div class="row items-start justify-between"></div></article></div></div></section></main><footer class="bg-light dark:bg-darkmode-light"><div class=container><div class="row items-center py-10"><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left"><a class="navbar-brand inline-block" href=/>Merlijn Sebrechts</a></div><div class="lg:col-6 mb-8 text-center lg:mb-0"><ul><li class="m-3 inline-block"><a href=/talks/>Speaking & consulting</a></li><li class="m-3 inline-block"><a href=/blog/>Blog</a></li><li class="m-3 inline-block"><a href=/about/>About</a></li></ul></div><div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right"><ul class=social-icons><li><a target=_blank aria-label=github rel="nofollow noopener" href=https://github.com/merlijn-sebrechts><i class="fab fa-github"></i></a></li><li><a target=_blank aria-label=linkedin rel="nofollow noopener" href=https://www.linkedin.com/in/merlijn-sebrechts><i class="fab fa-linkedin"></i></a></li><li><a target=_blank aria-label=twitter rel="nofollow noopener" href=https://twitter.com/mesebrec><i class="fab fa-twitter"></i></a></li><li><a target=_blank aria-label=mastodon rel="nofollow noopener" href=https://ubuntu.social/@mesebrec><i class="fab fa-mastodon"></i></a></li><li><a target=_blank aria-label=orcid rel="nofollow noopener" href=https://orcid.org/0000-0002-4093-7338><i class="fab fa-orcid"></i></a></li><li><a target=_blank aria-label=researchgate rel="nofollow noopener" href=https://www.researchgate.net/profile/Merlijn-Sebrechts><i class="fab fa-researchgate"></i></a></li><li><a target=_blank aria-label=email rel="nofollow noopener" href=mailto:merlijn.sebrechts@gmail.com><i class="fas fa-envelope"></i></a></li><li><a target=_blank aria-label=rss rel="nofollow noopener" href=/index.xml><i class="fas fa-rss"></i></a></li></ul></div></div></div><div class="border-border dark:border-darkmode-border border-t py-7"><div class="text-text-light dark:text-darkmode-text-light container text-center"><p>© Merlijn Sebrechts</p></div></div></footer><script crossorigin=anonymous integrity="sha256-LIxQmHm2wv8nQgk9cs7AsxR37WgKVli/Ggtr/x0PQb8=" src=/js/script.min.2c8c509879b6c2ff2742093d72cec0b31477ed680a5658bf1a0b6bff1d0f41bf.js></script><script defer async crossorigin=anonymous integrity="sha256-ERVlJv0r9BVw+veEd5+D3oOJuHI8UEMwuPAD0a8FNhY=" src=/js/script-lazy.min.11156526fd2bf41570faf784779f83de8389b8723c504330b8f003d1af053616.js></script><script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js")</script></body></html>
