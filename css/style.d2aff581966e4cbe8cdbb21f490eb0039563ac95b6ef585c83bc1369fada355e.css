@@ -11,13 +11,6 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-200: oklch(88.5% 0.062 18.334);
-    --color-yellow-200: oklch(94.5% 0.129 101.54);
-    --color-green-200: oklch(92.5% 0.084 155.995);
-    --color-blue-200: oklch(88.2% 0.059 254.128);
-    --color-pink-200: oklch(89.9% 0.061 343.231);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
@@ -275,9 +268,6 @@
   .z-30 {
     z-index: 30;
   }
-  .z-50 {
-    z-index: 50;
-  }
   .order-0 {
     order: 0;
   }
@@ -469,9 +459,6 @@
   .w-80 {
     width: calc(var(--spacing) * 80);
   }
-  .w-\[30px\]\! {
-    width: 30px !important;
-  }
   .w-full {
     width: 100%;
   }
@@ -556,9 +543,6 @@
   }
   .bg-body {
     background-color: var(--color-body);
-  }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
   }
   .bg-light {
     background-color: var(--color-light);
@@ -649,9 +633,6 @@
   .py-14 {
     padding-block: calc(var(--spacing) * 14);
   }
-  .py-\[2\.5px\] {
-    padding-block: 2.5px;
-  }
   .pt-7 {
     padding-top: calc(var(--spacing) * 7);
   }
@@ -700,9 +681,6 @@
   .text-\[8rem\] {
     font-size: 8rem;
   }
-  .text-\[12px\] {
-    font-size: 12px;
-  }
   .text-h3 {
     font-size: var(--text-h3);
   }
@@ -714,9 +692,6 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-black {
-    color: var(--color-black);
-  }
   .text-text-dark {
     color: var(--color-text-dark);
   }
@@ -725,9 +700,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .uppercase {
-    text-transform: uppercase;
   }
   .opacity-0 {
     opacity: 0%;
@@ -763,19 +735,8 @@
   @media (width >= 40rem) {
     .sm\:col-10 {
       grid-column: 10;
-    }
-    .sm\:block {
-      display: block;
-    }
-    .sm\:hidden {
-      display: none;
-    }
-    .sm\:col-10 {
       flex: 0 0 auto;
       width: 83.33333333333334%;
-    }
-    .sm\:bg-red-200 {
-      background-color: var(--color-red-200);
     }
   }
   @media (width >= 48rem) {
@@ -818,12 +779,6 @@
     .md\:mb-0 {
       margin-bottom: 0px;
     }
-    .md\:block {
-      display: block;
-    }
-    .md\:hidden {
-      display: none;
-    }
     .md\:h-full\! {
       height: 100% !important;
     }
@@ -861,9 +816,6 @@
     .md\:self-stretch {
       align-self: stretch;
     }
-    .md\:bg-yellow-200 {
-      background-color: var(--color-yellow-200);
-    }
   }
   @media (width >= 64rem) {
     .lg\:order-1 {
@@ -884,9 +836,6 @@
     .lg\:col-8 {
       grid-column: 8;
     }
-    .lg\:col-9 {
-      grid-column: 9;
-    }
     .lg\:col-10 {
       grid-column: 10;
     }
@@ -898,9 +847,6 @@
     }
     .lg\:ml-0 {
       margin-left: 0px;
-    }
-    .lg\:block {
-      display: block;
     }
     .lg\:flex {
       display: flex;
@@ -928,10 +874,6 @@
       flex: 0 0 auto;
       width: 66.66666666666667%;
     }
-    .lg\:col-9 {
-      flex: 0 0 auto;
-      width: 75%;
-    }
     .lg\:col-10 {
       flex: 0 0 auto;
       width: 83.33333333333334%;
@@ -946,9 +888,6 @@
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    .lg\:bg-green-200 {
-      background-color: var(--color-green-200);
     }
     .lg\:pb-0 {
       padding-bottom: 0px;
@@ -966,14 +905,6 @@
   @media (width >= 80rem) {
     .xl\:col-6 {
       grid-column: 6;
-    }
-    .xl\:block {
-      display: block;
-    }
-    .xl\:hidden {
-      display: none;
-    }
-    .xl\:col-6 {
       flex: 0 0 auto;
       width: 50%;
     }
@@ -981,20 +912,6 @@
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 8) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse)));
-    }
-    .xl\:bg-blue-200 {
-      background-color: var(--color-blue-200);
-    }
-  }
-  @media (width >= 96rem) {
-    .\32 xl\:block {
-      display: block;
-    }
-    .\32 xl\:hidden {
-      display: none;
-    }
-    .\32 xl\:bg-pink-200 {
-      background-color: var(--color-pink-200);
     }
   }
   .dark\:border-darkmode-border:where(.dark, .dark *) {
